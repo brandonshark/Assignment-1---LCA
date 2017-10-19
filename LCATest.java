@@ -36,7 +36,21 @@ public class LCATest {
 		LCA bst = new LCA();
 		bst.root = new Node(1);
 		bst.root.left = new Node(2);
-
 		assertEquals("Find LCA of tree with only root and one child: ", 1, bst.findLCA(1, 2).data);	
 	}
+	
+	@Test
+	public void testForNonExistentNodes(){
+		LCA bst = new LCA();
+		bst.root = new Node(1);
+		bst.root.left = new Node(2);
+		bst.root.right = new Node(3);
+		bst.root.left.left = new Node(4);
+		bst.root.left.right = new Node(5);
+		bst.root.right.left = new Node(6);
+		bst.root.right.right = new Node(7);
+		assertEquals("Find ancestors of non-existent nodes in populated tree: ", null, bst.findLCA(55,78));
+	}
 }
+	
+	
