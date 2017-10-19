@@ -16,7 +16,6 @@ public class LCATest {
 	}
 	@Test
 	public void testCommonAncestor(){
-
 		LCA bst = new LCA();
 		bst.root = new Node(1);
 		bst.root.left = new Node(2);
@@ -30,6 +29,14 @@ public class LCATest {
 		assertEquals("LCA of 6 and 7: ", 3, bst.findLCA(6, 7).data);
 		assertEquals("LCA of 2 and 3: ", 1, bst.findLCA(2, 3).data);
 		assertEquals("LCA of 4 and 7: ", 1, bst.findLCA(4, 7).data);
+	}
+	
+	@Test
+	public void testTwoNodes(){
+		LCA bst = new LCA();
+		bst.root = new Node(1);
+		bst.root.left = new Node(2);
 
+		assertEquals("Find LCA of tree with only root and one child: ", 1, bst.findLCA(1, 2).data);	
 	}
 }
